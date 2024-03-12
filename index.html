@@ -11,9 +11,12 @@
     </div>
     <script>
         let divUsuarios = document.querySelector("#usuarios")
-
+   // fetch pegar os dados, ou seja, pega uma url ou arquivo, pode se usar esse método para uma api
+   // .then ele é executando quando for retornar alguma coisa 
+   // response gera a resposta do dado
         fetch("dados.json").then((response) => {
             response.json().then((dados) => {
+                // map ele percorre todos os elementos do array
                 dados.usuarios.map((usuario) => {
                     divUsuarios.innerHTML += ` <p> ${usuario.nome} - ${usuario.numero} </p>`
                 })
